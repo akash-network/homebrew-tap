@@ -2,9 +2,9 @@
 class Akash < Formula
   desc "Blockchain-powered decentralized compute platform"
   homepage "https://akash.network"
-  url "https://github.com/ovrclk/akash/releases/download/v0.4.2-rc0/akash_0.4.2-rc0_darwin_amd64.tar.gz"
-  version "0.4.2-rc0"
-  sha256 "8c5f3d105fdaf5772395f0396a310748a9b04f0296554b45f5b420fd77bd7107"
+  url "https://github.com/ovrclk/akash/releases/download/v0.4.2-rc1/akash_0.4.2-rc1_darwin_amd64.tar.gz"
+  version "0.4.2-rc1"
+  sha256 "3e9eb768e2b5e46c37d6bbac57c106262f41afd5772bd134ff5289943e7e7f9c"
 
   def install
     bin.install "akash"

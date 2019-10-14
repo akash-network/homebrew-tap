@@ -2,9 +2,25 @@
 class Akash < Formula
   desc "Blockchain-powered decentralized compute platform"
   homepage "https://akash.network"
-  url "https://github.com/ovrclk/akash/releases/download/v0.4.3/akash_0.4.3_darwin_amd64.tar.gz"
-  version "0.4.3"
-  sha256 "a1e1770252122595811b96ddb21cefbe5f59f420feda2c04a40220c030bf0242"
+  version "0.5.0"
+  bottle :unneeded
+
+  if OS.mac?
+    url "https://github.com/ovrclk/akash/releases/download/v0.5.0/akash_0.5.0_macOS_64-bit.zip"
+    sha256 "772e1360dd455de1291f06966d47ed576cfa53a58bb34f9c31e8497569aecaee"
+  elsif OS.linux?
+    if Hardware::CPU.intel?
+      url "https://github.com/ovrclk/akash/releases/download/v0.5.0/akash_0.5.0_Tux_64-bit.zip"
+      sha256 "24b3d52f6911f3df232ef7b8564c70b661504d982998d5b1bc4c7ecbf6f7cc7f"
+    end
+    if Hardware::CPU.arm?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/ovrclk/akash/releases/download/v0.5.0/akash_0.5.0_Tux_arm64.zip"
+        sha256 "6d64c9150c921820c177d3e136c84bd9d0d283d78bad30d6de34b3d9ede526c9"
+      else
+      end
+    end
+  end
 
   def install
     bin.install "akash"

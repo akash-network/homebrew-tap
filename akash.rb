@@ -7,16 +7,16 @@ class Akash < Formula
 
   if OS.mac?
     url "https://github.com/ovrclk/akash/releases/download/v0.6.1-testrel/akash_0.6.1-testrel_darwin_amd64.zip"
-    sha256 "c4bceb2337eab1e1752fc250f551f33ce5be6317cfe1fe69ed2e8a4e9567ed9f"
+    sha256 "14066a1b666ad92353c0878af9752e0f7cf0fe9fac7ff260258204d770bc4cbc"
   elsif OS.linux?
     if Hardware::CPU.intel?
       url "https://github.com/ovrclk/akash/releases/download/v0.6.1-testrel/akash_0.6.1-testrel_linux_amd64.zip"
-      sha256 "808cb159649b3e9b0006354aab48e0a73b64550c1aa38078a661d21c0b27ac11"
+      sha256 "1eb8db0676328efeb184b24f058c7845cf4d1a2c678e87b78a7d50503d7768f7"
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
         url "https://github.com/ovrclk/akash/releases/download/v0.6.1-testrel/akash_0.6.1-testrel_linux_arm64.zip"
-        sha256 "6917989d830e73a9b00883f02ec552fd55f9e3a1ecc406f53ad6acd924a91424"
+        sha256 "7665ed1a8b21ebfff7456f73261c5ef5c55235a812aa8e1c8cfe35621150a9f0"
       else
       end
     end

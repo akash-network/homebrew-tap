@@ -2,21 +2,21 @@
 class Akash < Formula
   desc "Blockchain-powered decentralized compute platform"
   homepage "https://akash.network"
-  version "0.6.1-testrel-2"
+  version "0.6.2"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/ovrclk/akash/releases/download/v0.6.1-testrel-2/akash_0.6.1-testrel-2_darwin_amd64.zip"
-    sha256 "63562d47134ba3f3f7e34f847703fbc085eb2b2e983b4a373eaebd79608d045b"
+    url "https://github.com/ovrclk/akash/releases/download/v0.6.2/akash_0.6.2_darwin_amd64.zip"
+    sha256 "3e205b72fbd6e5facd79886fe0ee6e46d01f377ac9d659c7c339354aadfd04d8"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/ovrclk/akash/releases/download/v0.6.1-testrel-2/akash_0.6.1-testrel-2_linux_amd64.zip"
-      sha256 "ee8487620e89d19cd7cc97746839618dfa325ab31356e0f5fb4b6f4e5c5faa78"
+      url "https://github.com/ovrclk/akash/releases/download/v0.6.2/akash_0.6.2_linux_amd64.zip"
+      sha256 "680c8c187a1b8e12861ad8e842fb301a3c66552944268f78a315c9c30a4318bb"
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/ovrclk/akash/releases/download/v0.6.1-testrel-2/akash_0.6.1-testrel-2_linux_arm64.zip"
-        sha256 "cd84db6c8da11b1ce3928e6ec258b86397fcc3663d82f2d5ff3fc58ba5811a06"
+        url "https://github.com/ovrclk/akash/releases/download/v0.6.2/akash_0.6.2_linux_arm64.zip"
+        sha256 "bb35fa1668af037871556ea401cad214b8bb955631dadaf57e0fd025ec3b8672"
       else
       end
     end

@@ -4,20 +4,11 @@ Homebrew repository for Akash packages.
 
 ## Installation of packages
 
-Add the ovrclk tap, using the below and follow the instruction for various packages
+Add the ovrclk tap, using the below and execute the below to install Akash Suite. 
 
 ```sh
-$ brew tap ovrclk/tap
+brew tap ovrclk/tap
+brew install akash
 ```
 
-### Akash CLI
-
-```sh
-$ brew install akash
-```
-
-### Akash Mirror
-
-```sh
-$ brew install akash-mirror
-```
+For usage documentation and guides, checkout [docs.akash.network](https://docs.akash.network)

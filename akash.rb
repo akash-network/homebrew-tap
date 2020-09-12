@@ -2,27 +2,28 @@
 class Akash < Formula
   desc "Blockchain-powered decentralized compute platform"
   homepage "https://akash.network"
-  version "0.9.1"
+  version "0.8.1"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/ovrclk/akash/releases/download/v0.9.1/akash_0.9.1_darwin_amd64.zip"
-    sha256 "800b86eaadee1e1602cb0dc142409859ec73a632a4b51c8882846176e6dd3d31"
+    url "https://github.com/ovrclk/akash/releases/download/v0.8.1/akash_0.8.1_darwin_amd64.zip"
+    sha256 "224f1eac0a528d3f4330e216e27008d389af08463e966f0da1330a51396a5834"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/ovrclk/akash/releases/download/v0.9.1/akash_0.9.1_linux_amd64.zip"
-      sha256 "2de4a99ae61be7c205c991b9998dad58e1fb008aff774de172a8a86e7af34815"
+      url "https://github.com/ovrclk/akash/releases/download/v0.8.1/akash_0.8.1_linux_amd64.zip"
+      sha256 "3040a30f46c2af34e00ae3932cc6c7f4a264a52df84aac8d30e92775d6957b8f"
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/ovrclk/akash/releases/download/v0.9.1/akash_0.9.1_linux_arm64.zip"
-        sha256 "1d32d7d7ac11f8e1582e895d693d0f03225d015ca00a2160837a8af3e01b02eb"
+        url "https://github.com/ovrclk/akash/releases/download/v0.8.1/akash_0.8.1_linux_arm64.zip"
+        sha256 "744db62249788e7a7090651dce60a859b6f5948edd6c8d227119eb6581c8b06d"
       else
       end
     end
   end
 
   def install
-    bin.install "akash"
+    bin.install "akashctl"
+    bin.install "akashd"
   end
 end

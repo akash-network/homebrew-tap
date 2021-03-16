@@ -10,19 +10,19 @@ class Akash < Formula
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/ovrclk/akash/releases/download/v0.10.2/akash_0.10.2_darwin_amd64.zip"
-    sha256 "9a717c0f57f4d5a39db7bf566a42b85b1b81adfe593145e2695cb3a7e92cb025"
+    sha256 "f9bced0b3fd32e9513118ca2175ff943ba46d79943786738eef597e7bd17835b"
   end
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/ovrclk/akash/releases/download/v0.10.2/akash_0.10.2_darwin_arm64.zip"
-    sha256 "6cf85c7a2a8d1fe233199670e770af45e3cc9f0f3fd1bada00baa81d7e8d4e64"
+    sha256 "0d2e66aade497fd4b7e95a93ca9ef8ea3a4676b5cfd91dc63548c625d77296a8"
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/ovrclk/akash/releases/download/v0.10.2/akash_0.10.2_linux_amd64.zip"
-    sha256 "538ec4f0c36da25f4f45308a509eee9fddba84661c6695c4d52dc7dc026c35fa"
+    sha256 "63f586b742509214682351fefb1c54da7ed54e39da5243353454e8f4a9d5f189"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
     url "https://github.com/ovrclk/akash/releases/download/v0.10.2/akash_0.10.2_linux_arm64.zip"
-    sha256 "67dbba0298ed8768044865d78b93dfc67456a33b5c5d6e4c5900b90ef05cbee2"
+    sha256 "ad757bffd42a6f87e4e5b09d0f3cbe0a8557b053bd3f5cc463f7a8fee10d839d"
   end
 
 

@@ -5,24 +5,24 @@
 class AkashEdge < Formula
   desc "Blockchain-powered decentralized compute platform"
   homepage "https://akash.network"
-  version "0.12.2-rc6"
+  version "0.12.2-rc7"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/ovrclk/akash/releases/download/v0.12.2-rc6/akash_0.12.2-rc6_darwin_amd64.zip"
-    sha256 "5054d0261848579c8ddf5e4425a2f0f90fe3968aa306fec63f57a4b99f7084b2"
+    url "https://github.com/ovrclk/akash/releases/download/v0.12.2-rc7/akash_0.12.2-rc7_darwin_amd64.zip"
+    sha256 "a0a5e36b62ea3d198ee59f2127ee770e7388fd616de5ccf54209ae6788b692b5"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/ovrclk/akash/releases/download/v0.12.2-rc6/akash_0.12.2-rc6_darwin_arm64.zip"
-    sha256 "8d79a331af7ca9f1f7103283b2423675b4142b0711adf567b8d934747b62cc3b"
+    url "https://github.com/ovrclk/akash/releases/download/v0.12.2-rc7/akash_0.12.2-rc7_darwin_arm64.zip"
+    sha256 "256838f6082d17f58591c6b0477ba53f543ec4ce050118ab95b4e06dfe6b8b82"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/ovrclk/akash/releases/download/v0.12.2-rc6/akash_0.12.2-rc6_linux_amd64.zip"
-    sha256 "2dfda7f329c992e137f3636a5023f852c5b704d4c61beb2f4d279a048512c92b"
+    url "https://github.com/ovrclk/akash/releases/download/v0.12.2-rc7/akash_0.12.2-rc7_linux_amd64.zip"
+    sha256 "48809dc6b50d07bedee20a4e3d2256ebf1ee5c8e47ef3f26e76aa77404779b20"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/ovrclk/akash/releases/download/v0.12.2-rc6/akash_0.12.2-rc6_linux_arm64.zip"
-    sha256 "8a3095a79b806e67abfcd5881ca98d682ecd398543b1b745dfe5e76ccd7472a2"
+    url "https://github.com/ovrclk/akash/releases/download/v0.12.2-rc7/akash_0.12.2-rc7_linux_arm64.zip"
+    sha256 "62d32e4e89243cdf672a17aa6405d763f874b53432d294da5510c79ecaacf5b3"
   end
 
   keg_only :unneeded, "This is testnet release. Run brew install ovrclk/tap/akash to install mainnet version"

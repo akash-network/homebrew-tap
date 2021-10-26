@@ -5,24 +5,24 @@
 class AkashEdge < Formula
   desc "Blockchain-powered decentralized compute platform"
   homepage "https://akash.network"
-  version "0.14.1-rc4"
+  version "0.14.1-rc5"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/ovrclk/akash/releases/download/v0.14.1-rc4/akash_0.14.1-rc4_darwin_amd64.zip"
-    sha256 "8c4af396407fb72e8d9b4059b2be75719375fef39996ee89868cd3fe76645f4b"
+    url "https://github.com/ovrclk/akash/releases/download/v0.14.1-rc5/akash_0.14.1-rc5_darwin_amd64.zip"
+    sha256 "fc97d55bd42cc05171fff49a02192295cec451d0b8148a5562e9b037013ce116"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/ovrclk/akash/releases/download/v0.14.1-rc4/akash_0.14.1-rc4_darwin_arm64.zip"
-    sha256 "8337cb4c8d408fa1fe258130d03e44ad98b5f1f1253a9ec160c766a2d3429a63"
+    url "https://github.com/ovrclk/akash/releases/download/v0.14.1-rc5/akash_0.14.1-rc5_darwin_arm64.zip"
+    sha256 "566dbb2323699aac91cf55b827353ecf7d9ef28642647e9d960aa769ebc96619"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/ovrclk/akash/releases/download/v0.14.1-rc4/akash_0.14.1-rc4_linux_amd64.zip"
-    sha256 "423e09f651728c80151bbd7623b8b7f72048d4b32db7d2dc7dcc2fc1d4104094"
+    url "https://github.com/ovrclk/akash/releases/download/v0.14.1-rc5/akash_0.14.1-rc5_linux_amd64.zip"
+    sha256 "0875b2f67973346b02677d0c0a576316b8455744966c71013643e589d3ac138e"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/ovrclk/akash/releases/download/v0.14.1-rc4/akash_0.14.1-rc4_linux_arm64.zip"
-    sha256 "b0bfd0b414d255db7dba5b5846e144045f1c848d0d6d3c21649362013aa59978"
+    url "https://github.com/ovrclk/akash/releases/download/v0.14.1-rc5/akash_0.14.1-rc5_linux_arm64.zip"
+    sha256 "9ab08274063d7e4cce80143d129a4a635cc858de0e787021882fdd2c98dc8f54"
   end
 
   keg_only :unneeded, "This is testnet release. Run brew install ovrclk/tap/akash to install mainnet version"

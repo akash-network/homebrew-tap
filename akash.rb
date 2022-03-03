@@ -6,7 +6,6 @@ class Akash < Formula
   desc "Blockchain-powered decentralized compute platform"
   homepage "https://akash.network"
   version "0.14.1"
-  bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/ovrclk/akash/releases/download/v0.14.1/akash_0.14.1_darwin_amd64.zip"

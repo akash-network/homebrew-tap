@@ -5,45 +5,29 @@
 class AkashEdge < Formula
   desc "Blockchain-powered decentralized compute platform"
   homepage "https://akash.network"
-  version "0.15.0-rc16"
+  version "0.14.2-rc1"
+  bottle :unneeded
 
-  on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/ovrclk/akash/releases/download/v0.15.0-rc16/akash_0.15.0-rc16_darwin_amd64.zip"
-      sha256 "ea69a3975440608083d036adf6b49442e10bb8b261dea473cb4ba5482690589a"
-
-      def install
-        bin.install "akash"
-      end
-    end
-    if Hardware::CPU.arm?
-      url "https://github.com/ovrclk/akash/releases/download/v0.15.0-rc16/akash_0.15.0-rc16_darwin_arm64.zip"
-      sha256 "0b8f5405bba40a1053013d17964cdc2fd4f96592b3a0898b1d002437f0ae624b"
-
-      def install
-        bin.install "akash"
-      end
-    end
+  if OS.mac? && Hardware::CPU.intel?
+    url "https://github.com/ovrclk/akash/releases/download/v0.14.2-rc1/akash_0.14.2-rc1_darwin_amd64.zip"
+    sha256 "3c5b0e74618d4e00b0780a29f95845316d5a13ebedee48bfa3cf26382c3523c5"
   end
-
-  on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ovrclk/akash/releases/download/v0.15.0-rc16/akash_0.15.0-rc16_linux_arm64.zip"
-      sha256 "dfb58130fd253fe14ad3bb24306bc25d1b2c16020691eadad4c7aa66dba5c4dc"
-
-      def install
-        bin.install "akash"
-      end
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/ovrclk/akash/releases/download/v0.15.0-rc16/akash_0.15.0-rc16_linux_amd64.zip"
-      sha256 "da110dc46bfe225b632ba0ae30689d07c711875fa2f47ab506d3bde0f7c102ea"
-
-      def install
-        bin.install "akash"
-      end
-    end
+  if OS.mac? && Hardware::CPU.arm?
+    url "https://github.com/ovrclk/akash/releases/download/v0.14.2-rc1/akash_0.14.2-rc1_darwin_arm64.zip"
+    sha256 "a359a0d58db55a612acc4e1d6a6e769de6204b222a95db3898cca484ea50e4c8"
+  end
+  if OS.linux? && Hardware::CPU.intel?
+    url "https://github.com/ovrclk/akash/releases/download/v0.14.2-rc1/akash_0.14.2-rc1_linux_amd64.zip"
+    sha256 "c5599196b69fe5d061115374b88efa24735ce075ce0e33c08d7acdc88fd110f4"
+  end
+  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    url "https://github.com/ovrclk/akash/releases/download/v0.14.2-rc1/akash_0.14.2-rc1_linux_arm64.zip"
+    sha256 "75f3a00cc66f6969063d8e33a6178fdcc2ada742399ca78c39ecd665fb3a26e3"
   end
 
   keg_only :unneeded, "This is testnet release. Run brew install ovrclk/tap/akash to install mainnet version"
+
+  def install
+    bin.install "akash"
+  end
 end

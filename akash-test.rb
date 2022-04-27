@@ -5,20 +5,20 @@
 class AkashTest < Formula
   desc "Blockchain-powered decentralized compute platform"
   homepage "https://akash.network"
-  version "0.16.1"
+  version "0.16.3"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/ovrclk/akash/releases/download/v0.16.1/akash_0.16.1_darwin_arm64.zip"
-      sha256 "1a4a73b22283ec1b55222370dece195cffece1a854ab76167857975436088c42"
+      url "https://github.com/ovrclk/akash/releases/download/v0.16.3/akash_0.16.3_darwin_arm64.zip"
+      sha256 "fe215d8d3129813c16efd0c422a9514d70b576348ea3e3f6c987e78fe0ee5da8"
 
       def install
         bin.install "akash"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ovrclk/akash/releases/download/v0.16.1/akash_0.16.1_darwin_amd64.zip"
-      sha256 "1e9ac65aaec2ba079a1a78905e72ac39856c8ef40ea4d5dc00cc28b1a71f9148"
+      url "https://github.com/ovrclk/akash/releases/download/v0.16.3/akash_0.16.3_darwin_amd64.zip"
+      sha256 "d7276857b2f24484457092b3e253201308627dfe3eb14498addb2646e2acf333"
 
       def install
         bin.install "akash"
@@ -28,16 +28,16 @@ class AkashTest < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ovrclk/akash/releases/download/v0.16.1/akash_0.16.1_linux_arm64.zip"
-      sha256 "b1338cc572b7e28276afdb25f6c24e35a85fdcb609d6f71b96894da7757e0dd5"
+      url "https://github.com/ovrclk/akash/releases/download/v0.16.3/akash_0.16.3_linux_arm64.zip"
+      sha256 "36fc27eb7921fc4904f97d2e8c31ca95bd4833b0458508b3910a84bc231be041"
 
       def install
         bin.install "akash"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ovrclk/akash/releases/download/v0.16.1/akash_0.16.1_linux_amd64.zip"
-      sha256 "5c4573da71a341601d4d4e66041f4f4dd8219583af52b85e7441a599ad44b199"
+      url "https://github.com/ovrclk/akash/releases/download/v0.16.3/akash_0.16.3_linux_amd64.zip"
+      sha256 "4f918929cf3f958068ec1ad608613241964267207bf906bb7dee0bbe2970d2cd"
 
       def install
         bin.install "akash"

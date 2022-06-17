@@ -5,26 +5,45 @@
 class Akash < Formula
   desc "Blockchain-powered decentralized compute platform"
   homepage "https://akash.network"
-  version "0.16.3"
+  version "0.16.4"
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/ovrclk/akash/releases/download/v0.16.3/akash_0.16.3_darwin_amd64.zip"
-    sha256 "d7276857b2f24484457092b3e253201308627dfe3eb14498addb2646e2acf333"
-  end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/ovrclk/akash/releases/download/v0.16.3/akash_0.16.3_darwin_arm64.zip"
-    sha256 "fe215d8d3129813c16efd0c422a9514d70b576348ea3e3f6c987e78fe0ee5da8"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/ovrclk/akash/releases/download/v0.16.3/akash_0.16.3_linux_amd64.zip"
-    sha256 "4f918929cf3f958068ec1ad608613241964267207bf906bb7dee0bbe2970d2cd"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/ovrclk/akash/releases/download/v0.16.3/akash_0.16.3_linux_arm64.zip"
-    sha256 "36fc27eb7921fc4904f97d2e8c31ca95bd4833b0458508b3910a84bc231be041"
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/ovrclk/akash/releases/download/v0.16.4/akash_0.16.4_darwin_arm64.zip"
+      sha256 "c97bf594a59a9845427d779c6b8118100dd301857afa7f497ec8e666fa0b68ec"
+
+      def install
+        bin.install "akash"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/ovrclk/akash/releases/download/v0.16.4/akash_0.16.4_darwin_amd64.zip"
+      sha256 "609dbec1f7121e0509a358223ec9d3d05282c26c41a1de60d9709b69ee8b10a4"
+
+      def install
+        bin.install "akash"
+      end
+    end
   end
 
-  def install
-    bin.install "akash"
+  on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/ovrclk/akash/releases/download/v0.16.4/akash_0.16.4_linux_arm64.zip"
+      sha256 "4dc60f1973215e4269a5ecd56167580002f764be5eab911f457749925b08fb0b"
+
+      def install
+        bin.install "akash"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/ovrclk/akash/releases/download/v0.16.4/akash_0.16.4_linux_amd64.zip"
+      sha256 "8f45cf3770c3aa09a3e02c073f99061d2dd49558113d4ea0a92c01d0c305f84a"
+
+      def install
+        bin.install "akash"
+      end
+    end
   end
+
+
 end

@@ -5,20 +5,20 @@
 class AkashTest < Formula
   desc "Blockchain-powered decentralized compute platform"
   homepage "https://akash.network"
-  version "0.16.5-rc10"
+  version "0.16.5-rc11"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/ovrclk/akash/releases/download/v0.16.5-rc10/akash_0.16.5-rc10_darwin_arm64.zip"
-      sha256 "a377dda29c813740a6bd15b2fd4b370a4088cf48315cb228c6bf81d9911a2fab"
+    if Hardware::CPU.intel?
+      url "https://github.com/ovrclk/akash/releases/download/v0.16.5-rc11/akash_0.16.5-rc11_darwin_amd64.zip"
+      sha256 "f4f2449309238903b7003aba8b112cef763400e345110382af920f355874441a"
 
       def install
         bin.install "akash"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/ovrclk/akash/releases/download/v0.16.5-rc10/akash_0.16.5-rc10_darwin_amd64.zip"
-      sha256 "f9db243ec79aebfcb5f0f641c8bbfab96f4b9b8a2c3cf37ebb92bafb4ac6f0eb"
+    if Hardware::CPU.arm?
+      url "https://github.com/ovrclk/akash/releases/download/v0.16.5-rc11/akash_0.16.5-rc11_darwin_arm64.zip"
+      sha256 "a23444162af684c7bf97c0e7627703f7ae0eae0d94a0ad226b32a36399b38c10"
 
       def install
         bin.install "akash"
@@ -27,17 +27,17 @@ class AkashTest < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/ovrclk/akash/releases/download/v0.16.5-rc10/akash_0.16.5-rc10_linux_amd64.zip"
-      sha256 "401af71510fb32257d568ba74ddb8cb665b8468db1757dd2615bff0733c77370"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/ovrclk/akash/releases/download/v0.16.5-rc11/akash_0.16.5-rc11_linux_arm64.zip"
+      sha256 "4f144e81280b62f8404724fcb6ae4f5352c05914dc67b7c3d4636458f9dfb81a"
 
       def install
         bin.install "akash"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ovrclk/akash/releases/download/v0.16.5-rc10/akash_0.16.5-rc10_linux_arm64.zip"
-      sha256 "43a9823fe32914fa6b0ce7a708d675cc695fcf3548598a14971efa0741d8e2d7"
+    if Hardware::CPU.intel?
+      url "https://github.com/ovrclk/akash/releases/download/v0.16.5-rc11/akash_0.16.5-rc11_linux_amd64.zip"
+      sha256 "b04281e650e1c1846de76a253d7d2294e0e18298cd4a3166ceb7d59b109375d5"
 
       def install
         bin.install "akash"

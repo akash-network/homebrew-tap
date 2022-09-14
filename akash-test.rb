@@ -5,20 +5,20 @@
 class AkashTest < Formula
   desc "Blockchain-powered decentralized compute platform"
   homepage "https://akash.network"
-  version "0.16.6-rc3"
+  version "0.16.6-rc4"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/ovrclk/akash/releases/download/v0.16.6-rc3/akash_0.16.6-rc3_darwin_arm64.zip"
-      sha256 "513ca88dc6fec2932930e8494174477ae5a03b60505a9d7a265585d576dda210"
+      url "https://github.com/ovrclk/akash/releases/download/v0.16.6-rc4/akash_0.16.6-rc4_darwin_arm64.zip"
+      sha256 "af47ab4c3d3f34865260e128563d1ae7d32dc8d64bfc3b75daa78fa7fcc42309"
 
       def install
         bin.install "akash"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ovrclk/akash/releases/download/v0.16.6-rc3/akash_0.16.6-rc3_darwin_amd64.zip"
-      sha256 "0e2e38eaf3f71814a9b2316fd6249daa40fc7e1804f708e066f5902c295a9c6c"
+      url "https://github.com/ovrclk/akash/releases/download/v0.16.6-rc4/akash_0.16.6-rc4_darwin_amd64.zip"
+      sha256 "37864ea636f4be096382b8fb3eb9d767f14ac5c8c3dee084109bb9d853f13bbd"
 
       def install
         bin.install "akash"
@@ -27,17 +27,17 @@ class AkashTest < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ovrclk/akash/releases/download/v0.16.6-rc3/akash_0.16.6-rc3_linux_arm64.zip"
-      sha256 "ef6db4dbfd63c62803b23c3ed5eebb680750113bcc3b2c034be99995ee4084a8"
+    if Hardware::CPU.intel?
+      url "https://github.com/ovrclk/akash/releases/download/v0.16.6-rc4/akash_0.16.6-rc4_linux_amd64.zip"
+      sha256 "5a7e1caa6d07399deacfc380e62f93267a282d8913ca123b1e508ba8d7b3ec8b"
 
       def install
         bin.install "akash"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/ovrclk/akash/releases/download/v0.16.6-rc3/akash_0.16.6-rc3_linux_amd64.zip"
-      sha256 "b5c5d0d2776b6a1e499e823dae80cef217f20f66c23c68ca5682b4487e2965be"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/ovrclk/akash/releases/download/v0.16.6-rc4/akash_0.16.6-rc4_linux_arm64.zip"
+      sha256 "3964cecc0506b595055f27d61f985e0ef9cb450f31c030757a653aca99f9a594"
 
       def install
         bin.install "akash"

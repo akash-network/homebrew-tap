@@ -5,20 +5,20 @@
 class AkashTest < Formula
   desc "Blockchain-powered decentralized compute platform"
   homepage "https://akash.network"
-  version "0.16.5-rc11"
+  version "0.16.6-rc2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/ovrclk/akash/releases/download/v0.16.5-rc11/akash_0.16.5-rc11_darwin_amd64.zip"
-      sha256 "f4f2449309238903b7003aba8b112cef763400e345110382af920f355874441a"
+      url "https://github.com/ovrclk/akash/releases/download/v0.16.6-rc2/akash_0.16.6-rc2_darwin_amd64.zip"
+      sha256 "c28eabcda1c75b5231c9808565eafde511ca32c45dd87e86103bfbf7bb151b4b"
 
       def install
         bin.install "akash"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/ovrclk/akash/releases/download/v0.16.5-rc11/akash_0.16.5-rc11_darwin_arm64.zip"
-      sha256 "a23444162af684c7bf97c0e7627703f7ae0eae0d94a0ad226b32a36399b38c10"
+      url "https://github.com/ovrclk/akash/releases/download/v0.16.6-rc2/akash_0.16.6-rc2_darwin_arm64.zip"
+      sha256 "ee641d5c374c0c225a67b5a93ec0d5f0281ae3a6005f02cdae3dbb70f8271047"
 
       def install
         bin.install "akash"
@@ -27,17 +27,17 @@ class AkashTest < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ovrclk/akash/releases/download/v0.16.5-rc11/akash_0.16.5-rc11_linux_arm64.zip"
-      sha256 "4f144e81280b62f8404724fcb6ae4f5352c05914dc67b7c3d4636458f9dfb81a"
+    if Hardware::CPU.intel?
+      url "https://github.com/ovrclk/akash/releases/download/v0.16.6-rc2/akash_0.16.6-rc2_linux_amd64.zip"
+      sha256 "b4e9aecf87c1b8f9a82a81f1ad9122518aaaa3847c7c92d45bfe5888b1bf62b8"
 
       def install
         bin.install "akash"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/ovrclk/akash/releases/download/v0.16.5-rc11/akash_0.16.5-rc11_linux_amd64.zip"
-      sha256 "b04281e650e1c1846de76a253d7d2294e0e18298cd4a3166ceb7d59b109375d5"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/ovrclk/akash/releases/download/v0.16.6-rc2/akash_0.16.6-rc2_linux_arm64.zip"
+      sha256 "7b3c847f0cdfd32667cc20cfc92149066a59893cae75ebd2332140deeb30b361"
 
       def install
         bin.install "akash"

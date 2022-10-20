@@ -5,11 +5,11 @@
 class AkashEdge < Formula
   desc "Blockchain-powered decentralized compute platform"
   homepage "https://akash.network"
-  version "0.17.2-rc5"
+  version "0.17.2-rc6"
 
   on_macos do
-    url "https://github.com/ovrclk/akash/releases/download/v0.17.2-rc5/akash_darwin_all.zip"
-    sha256 "a622f99418731bcdf02833111e83b027843b0026db8045944455d0bfe97555db"
+    url "https://github.com/ovrclk/akash/releases/download/v0.17.2-rc6/akash_darwin_all.zip"
+    sha256 "bde02ed74a42ab52d2b2393f5484a0d72fc46f1a32166587bf7ad2082d8b8fc6"
 
     def install
       bin.install "akash"
@@ -18,16 +18,16 @@ class AkashEdge < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ovrclk/akash/releases/download/v0.17.2-rc5/akash_linux_arm64.zip"
-      sha256 "8ddf27cb12c0aff04a0a21a8bca0e90a95fd5bb3923430848c194620704f451f"
+      url "https://github.com/ovrclk/akash/releases/download/v0.17.2-rc6/akash_linux_arm64.zip"
+      sha256 "ce65a0e304ce29be198c9c1a54c2d40721c2251ed8f9ed9f372b3a85a4a93efd"
 
       def install
         bin.install "akash"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ovrclk/akash/releases/download/v0.17.2-rc5/akash_linux_amd64.zip"
-      sha256 "11227e2931631ed99bce52cd269a83b0a64190de1a2b5e667dd52c447325bbc6"
+      url "https://github.com/ovrclk/akash/releases/download/v0.17.2-rc6/akash_linux_amd64.zip"
+      sha256 "0837b3ce4a7565044453d9ec93a214d57fa4052a61478bb93fc357a574db9702"
 
       def install
         bin.install "akash"

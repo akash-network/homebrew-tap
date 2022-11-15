@@ -5,11 +5,11 @@
 class Akash < Formula
   desc "Blockchain-powered decentralized compute platform"
   homepage "https://akash.network"
-  version "0.18.0"
+  version "0.18.1"
 
   on_macos do
-    url "https://github.com/ovrclk/akash/releases/download/v0.18.0/akash_darwin_all.zip"
-    sha256 "5d865552438502855d843aa647a8af6cff637acfca5ad0f685528abda81217dd"
+    url "https://github.com/ovrclk/akash/releases/download/v0.18.1/akash_darwin_all.zip"
+    sha256 "b72495d57c0ad1d294f99e4c95d7ee5bae64aa1cb5b7a3a87606cc5aeb3baf5c"
 
     def install
       bin.install "akash"
@@ -17,17 +17,17 @@ class Akash < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/ovrclk/akash/releases/download/v0.18.0/akash_linux_amd64.zip"
-      sha256 "1c0582bdbe7ce1c90eb6df5c29632fc08c07df7254399f98eb6e51fd8a1091ce"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/ovrclk/akash/releases/download/v0.18.1/akash_linux_arm64.zip"
+      sha256 "188efb326438494be91e11c355e8bae00026db8c86aa82ba38c4e94679c3f871"
 
       def install
         bin.install "akash"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ovrclk/akash/releases/download/v0.18.0/akash_linux_arm64.zip"
-      sha256 "2e098b803adbbc28c1555d02d83dfebd46f95a95be3b5648c65c0f47ff26a8b4"
+    if Hardware::CPU.intel?
+      url "https://github.com/ovrclk/akash/releases/download/v0.18.1/akash_linux_amd64.zip"
+      sha256 "717345ac567e24084ebc74e77485a05f4bd40609c4c536b372a176e7f36f0917"
 
       def install
         bin.install "akash"

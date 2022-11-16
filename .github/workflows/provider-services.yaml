@@ -1,0 +1,58 @@
+name: provider-sevices
+on:
+  repository_dispatch:
+    types: provider-services
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: install gomplate
+        run: |
+          curl -o /usr/local/bin/gomplate -sSL https://github.com/hairyhenderson/gomplate/releases/download/v3.11.3/gomplate_linux-amd64
+          chmod 755 /usr/local/bin/gomplate
+      - name: get version
+        run: echo "RELEASE_TAG=${{ github.event.client_payload.tag }}" >> $GITHUB_ENV
+      - name: set env
+        shell: bash
+        run: |
+          FORMULA_KEG_ONLY=${{ github.event.client_payload.is_prerelease }}
+          RELEASE_VERSION=${{ env.RELEASE_TAG }}
+          echo "RELEASE_VERSION=${RELEASE_VERSION#v}" >> $GITHUB_ENV
+          echo "FORMULA_KEG_ONLY=${FORMULA_KEG_ONLY}" >> $GITHUB_ENV
+          if [[ "${FORMULA_KEG_ONLY}" == "true" ]]; then
+              echo "FORMULA_NAME=AKashProviderServicesUnstable" >> $GITHUB_ENV
+              echo "FORMULA_FILE=akash-provider-services-unstable.rb" >> $GITHUB_ENV
+          else
+              echo "FORMULA_NAME=AKashProviderServices" >> $GITHUB_ENV
+              echo "FORMULA_FILE=akash-provider-services.rb" >> $GITHUB_ENV
+          fi
+      - name: download checksums
+        uses: robinraju/release-downloader@v1.6
+        with:
+          repository: ovrclk/provider-services
+          latest: false
+          tag: ${{ env.RELEASE_TAG }}
+          fileName: "*.txt"
+          tarBall: false
+          zipBall: false
+          token: ${{ secrets.GHCR_TOKEN }}
+      - name: dump checksums
+        run: |
+          DARWIN_ALL_CHECKSUM=$(cat provider-services_${{ env.RELEASE_VERSION }}_checksums.txt | grep "provider-services_darwin_all.zip" 2>/dev/null | tr '\t' ' ' | cut -d ' ' -f 1)
+          LINUX_AMD64_CHECKSUM=$(cat provider-services_${{ env.RELEASE_VERSION }}_checksums.txt | grep "provider-services_linux_amd64.zip" 2>/dev/null | tr '\t' ' ' | cut -d ' ' -f 1)
+          LINUX_ARM64_CHECKSUM=$(cat provider-services_${{ env.RELEASE_VERSION }}_checksums.txt | grep "provider-services_linux_arm64.zip" 2>/dev/null | tr '\t' ' ' | cut -d ' ' -f 1)
+          
+          echo "DARWIN_ALL_CHECKSUM=${DARWIN_ALL_CHECKSUM}" >> $GITHUB_ENV
+          echo "LINUX_AMD64_CHECKSUM=${LINUX_AMD64_CHECKSUM}" >> $GITHUB_ENV
+          echo "LINUX_ARM64_CHECKSUM=${LINUX_ARM64_CHECKSUM}" >> $GITHUB_ENV
+      - name: render formula
+        run:
+          gomplate -f templates/provider-services.rb.tmlp > ${{ env.FORMULA_FILE }}
+      - name: commit formula
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: ${{ env.FORMULA_FILE }}
+          default_author: github_actor
+          message: 'feat: ${{ env.FORMULA_FILE }} ${{ env.RELEASE_TAG }}'
+          push: true

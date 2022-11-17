@@ -6,7 +6,7 @@ class AKashProviderServices < Formula
 
   on_macos do
     url "https://github.com/ovrclk/akash/releases/download/v0.1.0/provider-services_darwin_all.zip"
-    sha256 "994546f610cdd360cf9bb42987adf925b1e709b982c09cdf9959561df00c364a"
+    sha256 "3086347fccdc766fb080a53c653b922e6a763d729c21faca84a512264612e8c4"
 
     def install
       bin.install "provider-services"
@@ -16,7 +16,7 @@ class AKashProviderServices < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/ovrclk/akash/releases/download/v0.1.0/akash_linux_arm64.zip"
-      sha256 "06cdd3dcdbca25502f7f5c891fe8aee24c2539497dbb340af36eff04c7911040"
+      sha256 "6a413772441d81dece4e4c4cec74ba7aa196c72f41daeda22ad354f4424139a4"
 
       def install
         bin.install "provider-services"
@@ -24,7 +24,7 @@ class AKashProviderServices < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/ovrclk/akash/releases/download/v0.1.0/akash_linux_amd64.zip"
-      sha256 "8f46e1f0a55b49b5f3500e27b4ca0928d24d057303597f0e463a2a7bd3e36ddb"
+      sha256 "e9acd9dd4705b13dd4ef42dfea40abb5bdbe2c691b37f3d7dc303627f97b02ef"
 
       def install
         bin.install "provider-services"

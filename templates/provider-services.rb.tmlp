@@ -5,7 +5,7 @@ class {{ .Env.FORMULA_NAME }} < Formula
   version "{{ .Env.RELEASE_VERSION }}"
 
   on_macos do
-    url "https://github.com/ovrclk/akash/releases/download/{{ .Env.RELEASE_TAG }}/provider-services_darwin_all.zip"
+    url "https://github.com/ovrclk/provider-services/releases/download/{{ .Env.RELEASE_TAG }}/provider-services_darwin_all.zip"
     sha256 "{{ .Env.DARWIN_ALL_CHECKSUM }}"
 
     def install
@@ -15,7 +15,7 @@ class {{ .Env.FORMULA_NAME }} < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ovrclk/akash/releases/download/{{ .Env.RELEASE_TAG }}/akash_linux_arm64.zip"
+      url "https://github.com/ovrclk/provider-services/releases/download/{{ .Env.RELEASE_TAG }}/provider-services_linux_arm64.zip"
       sha256 "{{ .Env.LINUX_ARM64_CHECKSUM }}"
 
       def install
@@ -23,7 +23,7 @@ class {{ .Env.FORMULA_NAME }} < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ovrclk/akash/releases/download/{{ .Env.RELEASE_TAG }}/akash_linux_amd64.zip"
+      url "https://github.com/ovrclk/provider-services/releases/download/{{ .Env.RELEASE_TAG }}/provider-services_linux_amd64.zip"
       sha256 "{{ .Env.LINUX_AMD64_CHECKSUM }}"
 
       def install

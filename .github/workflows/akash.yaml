@@ -1,4 +1,4 @@
-name: provider-services
+name: akash
 on:
   workflow_dispatch:
     inputs:
@@ -20,11 +20,11 @@ jobs:
         run: |
           RELEASE_VERSION=${{ env.RELEASE_TAG }}
           echo "RELEASE_VERSION=${RELEASE_VERSION#v}" >> $GITHUB_ENV
-          echo "FORMULA_FILE=akash-provider-services.rb" >> $GITHUB_ENV
+          echo "FORMULA_FILE=akash.rb" >> $GITHUB_ENV
       - name: download checksums
         uses: robinraju/release-downloader@v1.7
         with:
-          repository: akash-network/provider
+          repository: akash-network/node
           latest: false
           tag: ${{ env.RELEASE_TAG }}
           fileName: "*.txt"
@@ -33,16 +33,16 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: dump checksums
         run: |
-          DARWIN_ALL_CHECKSUM=$(cat provider-services_${{ env.RELEASE_VERSION }}_checksums.txt | grep "provider-services_darwin_all.zip" 2>/dev/null | tr '\t' ' ' | cut -d ' ' -f 1)
-          LINUX_AMD64_CHECKSUM=$(cat provider-services_${{ env.RELEASE_VERSION }}_checksums.txt | grep "provider-services_linux_amd64.zip" 2>/dev/null | tr '\t' ' ' | cut -d ' ' -f 1)
-          LINUX_ARM64_CHECKSUM=$(cat provider-services_${{ env.RELEASE_VERSION }}_checksums.txt | grep "provider-services_linux_arm64.zip" 2>/dev/null | tr '\t' ' ' | cut -d ' ' -f 1)
+          DARWIN_ALL_CHECKSUM=$(cat akash_${{ env.RELEASE_VERSION }}_checksums.txt | grep "akash_darwin_all.zip" 2>/dev/null | tr '\t' ' ' | cut -d ' ' -f 1)
+          LINUX_AMD64_CHECKSUM=$(cat akash_${{ env.RELEASE_VERSION }}_checksums.txt | grep "akash_linux_amd64.zip" 2>/dev/null | tr '\t' ' ' | cut -d ' ' -f 1)
+          LINUX_ARM64_CHECKSUM=$(cat akash_${{ env.RELEASE_VERSION }}_checksums.txt | grep "akash_linux_arm64.zip" 2>/dev/null | tr '\t' ' ' | cut -d ' ' -f 1)
 
           echo "DARWIN_ALL_CHECKSUM=${DARWIN_ALL_CHECKSUM}" >> $GITHUB_ENV
           echo "LINUX_AMD64_CHECKSUM=${LINUX_AMD64_CHECKSUM}" >> $GITHUB_ENV
           echo "LINUX_ARM64_CHECKSUM=${LINUX_ARM64_CHECKSUM}" >> $GITHUB_ENV
       - name: render formula
         run:
-          gomplate -f templates/provider-services.rb.tmpl > ${{ env.FORMULA_FILE }}
+          gomplate -f templates/akash.rb.tmpl > ${{ env.FORMULA_FILE }}
       - name: commit formula
         uses: EndBug/add-and-commit@v9
         with:
@@ -64,8 +64,8 @@ jobs:
         run: |
           RELEASE_VERSION=${{ github.event.inputs.tag }}
           echo "RELEASE_VERSION=${RELEASE_VERSION#v}" >> $GITHUB_ENV
-          echo "FORMULA_NAME=akash-provider-services" >> $GITHUB_ENV
-      - name: install provider-services
+          echo "FORMULA_NAME=akash" >> $GITHUB_ENV
+      - name: install akash
         shell: bash
         run: |
           brew tap akash-network/homebrew-tap

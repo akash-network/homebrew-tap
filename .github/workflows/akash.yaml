@@ -30,7 +30,7 @@ jobs:
           fileName: "*.txt"
           tarBall: false
           zipBall: false
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GORELEASER_ACCESS_TOKEN }}
       - name: dump checksums
         run: |
           DARWIN_ALL_CHECKSUM=$(cat akash_${{ env.RELEASE_VERSION }}_checksums.txt | grep "akash_darwin_all.zip" 2>/dev/null | tr '\t' ' ' | cut -d ' ' -f 1)

@@ -6,7 +6,7 @@ class Akash < Formula
 
   on_macos do
     url "https://github.com/akash-network/node/releases/download/v0.24.0/akash_darwin_all.zip"
-    sha256 "e63be48a93d6f9a1423c5c516324aef61940c2a1cad1d78300a1af1bafe1b98d"
+    sha256 "fc92f7bfde905c374901ce9603241e246c1ee7298988d3cba0d99bf11c480c73"
 
     def install
       bin.install "akash"
@@ -16,7 +16,7 @@ class Akash < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/akash-network/node/releases/download/v0.24.0/akash_linux_arm64.zip"
-      sha256 "e2ced0c15a52864d463327e56fea47f675c5a7430d87f9dc64777639c4300937"
+      sha256 "d13dca9ac416b3186e4f25b38bd018d4fbabd02d9b572e42de7709d7276f982b"
 
       def install
         bin.install "akash"
@@ -24,7 +24,7 @@ class Akash < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/akash-network/node/releases/download/v0.24.0/akash_linux_amd64.zip"
-      sha256 "2b02f0d6bbb9928dc106fbb0a05c203b8648b9d2cd99747333feee9773a65fd5"
+      sha256 "56242f1ee1e3aa233dac8aca97da69a5aa74ad90bffcf579354e5f2322e208d8"
 
       def install
         bin.install "akash"

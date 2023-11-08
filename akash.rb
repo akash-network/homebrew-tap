@@ -2,11 +2,11 @@
 class Akash < Formula
   desc "Blockchain-powered decentralized compute platform"
   homepage "https://akash.network"
-  version "0.26.1"
+  version "0.26.2"
 
   on_macos do
-    url "https://github.com/akash-network/node/releases/download/v0.26.1/akash_darwin_all.zip"
-    sha256 "351dfaf70b211bc2fbd77a692928df34c55febc71403c13cf5399004ae6675ad"
+    url "https://github.com/akash-network/node/releases/download/v0.26.2/akash_darwin_all.zip"
+    sha256 "dad81f3a8f7d5e545e32d9c4c741421986013d9d8bb6a7550391f40e3342e41e"
 
     def install
       bin.install "akash"
@@ -15,16 +15,16 @@ class Akash < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/akash-network/node/releases/download/v0.26.1/akash_linux_arm64.zip"
-      sha256 "583ff9c6586014e4cf9a6a14529d53385a3d16857f89d571c50606f389eb47dc"
+      url "https://github.com/akash-network/node/releases/download/v0.26.2/akash_linux_arm64.zip"
+      sha256 "7e9c45ddba5642d92f2a5a6923e13f7d6ef4a5c2afe38701395c90a486f025fd"
 
       def install
         bin.install "akash"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/akash-network/node/releases/download/v0.26.1/akash_linux_amd64.zip"
-      sha256 "5a2b406e1df0144ef23a184837c5f6bf5e704271ecb94f94d7f705a4f90f2580"
+      url "https://github.com/akash-network/node/releases/download/v0.26.2/akash_linux_amd64.zip"
+      sha256 "8999d6b3ba19fb7546ae070c3032266d0049c6a920ab2838bab03a031ae26eb0"
 
       def install
         bin.install "akash"

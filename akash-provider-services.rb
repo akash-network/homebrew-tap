@@ -2,10 +2,10 @@
 class AkashProviderServices < Formula
   desc "Blockchain-powered decentralized compute platform"
   homepage "https://akash.network"
-  version "0.4.6"
+  version "0.4.8"
 
   on_macos do
-    url "https://github.com/akash-network/provider/releases/download/v0.4.6/provider-services_darwin_all.zip"
+    url "https://github.com/akash-network/provider/releases/download/v0.4.8/provider-services_darwin_all.zip"
     sha256 "bf0119141565e4923139341704daf1c1786cea9fada441c7b7f4b46c2f4e0b63"
 
     def install
@@ -15,7 +15,7 @@ class AkashProviderServices < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/akash-network/provider/releases/download/v0.4.6/provider-services_linux_arm64.zip"
+      url "https://github.com/akash-network/provider/releases/download/v0.4.8/provider-services_linux_arm64.zip"
       sha256 "b2f76ad02df6388e5b7bb71df3218c8848089a2cf551a1b76489ccb298bfe390"
 
       def install
@@ -23,7 +23,7 @@ class AkashProviderServices < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/akash-network/provider/releases/download/v0.4.6/provider-services_linux_amd64.zip"
+      url "https://github.com/akash-network/provider/releases/download/v0.4.8/provider-services_linux_amd64.zip"
       sha256 "9e49b1eb8365751cf599292ab989ecfaf34a03c737de83f44d6fa4cdae32b729"
 
       def install

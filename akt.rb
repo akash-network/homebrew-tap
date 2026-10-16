@@ -5,12 +5,12 @@
 class Akt < Formula
   desc "Unified CLI for the Akash Network"
   homepage "https://akash.network"
-  version "1.0.3"
+  version "1.0.4"
   license "Apache-2.0"
 
   on_macos do
-    url "https://github.com/akash-network/akt/releases/download/v1.0.3/akt_1.0.3_darwin_all.zip"
-    sha256 "fe2be07f90192251f4205b944861bc3e9a52fa202653c9c7bf4f04cc69f3d4a1"
+    url "https://github.com/akash-network/akt/releases/download/v1.0.4/akt_1.0.4_darwin_all.zip"
+    sha256 "6d7ee4de5e22cfedc58a193e10a8b2ea04bf787b933b2a8ac8e61530c860aeb3"
 
     define_method(:install) do
       bin.install "akt"
@@ -19,15 +19,15 @@ class Akt < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/akash-network/akt/releases/download/v1.0.3/akt_1.0.3_linux_amd64.zip"
-      sha256 "8da1d8bf4991a9e95d5603af8f443e9dca870f99cfcf6084fec69cc91ca18eaa"
+      url "https://github.com/akash-network/akt/releases/download/v1.0.4/akt_1.0.4_linux_amd64.zip"
+      sha256 "3453b3ba29b569a16b9cc89abaf973cbb9123e1bedb16336094a1bcccc441c90"
       define_method(:install) do
         bin.install "akt"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/akash-network/akt/releases/download/v1.0.3/akt_1.0.3_linux_arm64.zip"
-      sha256 "3c3131937f2022b89445a1ba0472f05ca85557d62c2af441b3f5695ba6af2cbb"
+      url "https://github.com/akash-network/akt/releases/download/v1.0.4/akt_1.0.4_linux_arm64.zip"
+      sha256 "7093fd1e1775c6122ebae5c1d045055a3bc893cdc34d0967ae11c870ee9889d0"
       define_method(:install) do
         bin.install "akt"
       end
